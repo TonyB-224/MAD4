@@ -1,24 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalCentering" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="azl-BM-Isd">
+                                <rect key="frame" x="46" y="143" width="300" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mood Tracker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvT-4d-NbG">
+                                        <rect key="frame" x="73.666666666666686" y="86" width="153" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="KJ8-1s-H7O"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feeling: Neutral 😐" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Os-sd-HbY">
+                                        <rect key="frame" x="72.666666666666671" y="185.33333333333334" width="154.66666666666663" height="21.666666666666657"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="xUV-ys-ylg">
+                                        <rect key="frame" x="8" y="275" width="284" height="34"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="LEb-3O-EuK"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="eBP-6N-Uq4"/>
+                                        </connections>
+                                    </slider>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="yys-Sd-2h8">
+                                        <rect key="frame" x="8" y="335" width="284" height="106"/>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUg-17-Uys">
+                                        <rect key="frame" x="87.666666666666686" y="459" width="125" height="50.333333333333314"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="5zp-0y-Oc9"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Save Mood" cornerStyle="fixed" buttonSize="large" titleAlignment="center">
+                                            <color key="baseBackgroundColor" red="0.32191738003388953" green="0.7978775015160704" blue="0.72923975414892683" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveMoodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qcl-Yb-8WZ"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No saved mood yet." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaa-LY-0tA">
+                                        <rect key="frame" x="63" y="568" width="174" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="dcC-BL-csT"/>
+                                    <constraint firstAttribute="width" constant="300" id="uLD-Of-jm0"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.59838669595144423" green="0.65804123711340212" blue="0.64995794502112003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="azl-BM-Isd" secondAttribute="bottom" constant="40" id="7JI-rr-YVh"/>
+                            <constraint firstItem="azl-BM-Isd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="PWt-rs-oCf"/>
+                            <constraint firstAttribute="bottom" secondItem="azl-BM-Isd" secondAttribute="bottom" constant="60" id="Rwb-C1-sfb"/>
+                            <constraint firstAttribute="trailing" secondItem="azl-BM-Isd" secondAttribute="trailing" constant="20" id="Yvv-a4-XIg"/>
+                            <constraint firstItem="azl-BM-Isd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="60" id="oI1-zc-CtT"/>
+                            <constraint firstItem="azl-BM-Isd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="40" id="osT-BQ-gHo"/>
+                            <constraint firstItem="azl-BM-Isd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="qDD-wN-QIV"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="yys-Sd-2h8" id="beC-oW-B3W"/>
+                        <outlet property="moodDescriptionLabel" destination="8Os-sd-HbY" id="ASg-34-txb"/>
+                        <outlet property="savedEntryLabel" destination="xaa-LY-0tA" id="efY-RT-Skw"/>
+                        <outlet property="slider" destination="xUV-ys-ylg" id="He4-YN-UC6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="20.610687022900763" y="117.60563380281691"/>
         </scene>
     </scenes>
 </document>
